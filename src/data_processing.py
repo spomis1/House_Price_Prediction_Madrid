@@ -98,3 +98,10 @@ cp_med = madrid.groupby("Codigo_Postal")["Precio"].mean().reset_index()
 # Lo convertimos en un diccionario para poder mapearlo
 precio_medio_dict = cp_med.set_index('Codigo_Postal')['Precio'].to_dict()
 
+# Funcion para guardar CSV 
+def csv(nombre_archivo, archivo_guardar):
+    ruta_archivo = '../Data/Processed/' + nombre_archivo + '.csv'
+    archivo_guardar.to_csv(ruta_archivo, index=False)
+# Guardamos el CSV Madrid para crear, entrenar y validar los modelos
+csv("madrid", madrid)
+

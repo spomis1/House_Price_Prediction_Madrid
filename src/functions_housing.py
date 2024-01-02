@@ -22,25 +22,24 @@ from xgboost import XGBRegressor
 from sklearn.preprocessing import OrdinalEncoder
 from sklearn.pipeline import Pipeline
 from geopy.geocoders import Nominatim
-
-# Importamos el dataset como un dataframe
-madrid = pd.read_csv("../Data/Raw/buy_houses_Madrid.csv",sep=';')
+from geopy.exc import GeocoderInsufficientPrivileges
+from geopy.exc import GeocoderTimedOut, GeocoderServiceError
 
 # Crear un geocodificador Nominatim
-geolocator = Nominatim(user_agent="myGeocoder",timeout=10)
+geolocator = Nominatim(user_agent="Madrid_Housing_Predict_Price")
 # Funcion para completar los Zipcode nulos o los que no comienzan con 28
 def obtener_codigo_postal(madrid):
-    if pd.isna(madrid['Zipcode']) or not str(madrid['Zipcode']).startswith("28"):
-        location = geolocator.reverse((madrid['Latitude'], madrid['Longitude']), exactly_one=True)
-        if location:
-            zipcode = location.raw.get('address', {}).get('postcode', None)
-            if zipcode:
-                return zipcode
+    try:
+        if pd.isna(madrid['Zipcode']) or not str(madrid['Zipcode']).startswith("28"):
+            location = geolocator.reverse((madrid['Latitude'], madrid['Longitude']), exactly_one=True)
+            if location:
+                zipcode = location.raw.get('address', {}).get('postcode', None)
+                if zipcode:
+                    return zipcode
+    except (GeocoderTimedOut, GeocoderServiceError) as e:
+        print(f"Error: {e}")
+        # Puedes agregar lógica aquí para manejar el error, como esperar un tiempo y volver a intentar
     return madrid['Zipcode']
-
-# Aplicamos la función para completar los códigos postales
-madrid['Zipcode'] = madrid.apply(obtener_codigo_postal, axis=1)
-
 
 # Guardar CSV
 

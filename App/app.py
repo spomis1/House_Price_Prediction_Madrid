@@ -15,24 +15,38 @@ from sklearn.preprocessing import OrdinalEncoder
 
 
 
-# Cargando el modelo ya entrenado
-with open('../models/Rf.pkl', 'rb') as file:
-    modelo = pickle.load(file)
-
-st.set_page_config(page_title="Predicción de Precios", page_icon=":house:",layout="wide",
-     initial_sidebar_state="expanded")
+# # Cargando el modelo ya entrenado
+# with open('../Models/Rf.pkl', 'rb') as file:
+#     modelo = pickle.load(file)
 
 
-c1, c2 = st.columns([.85, .20])
-c1.title('PREDICTOR DE PRECIOS DE VIVIENDAS :crystal_ball:')
-c1.subheader('¿Cuánto pagarás por tu nuevo hogar? :european_castle:')
-c2.image('../Data/logo (2).png', width=200)
+with open('../Models/Rf.pkl', 'rb') as file:
+    modelo = pickle.load(file, fix_imports=False, encoding='latin1')
+# # Cargando el modelo ya entrenado
+# try:
+#     with open('../Models/Rf.pkl', 'rb') as file:
+#         modelo = pickle.load(file)
+# except FileNotFoundError:
+#     st.error("No se pudo cargar el modelo. Verifica la ruta del archivo.")
+#     st.stop()
+# except Exception as e:
+#     st.error(f"Error al cargar el modelo: {e}")
+#     st.stop()
 
-Zonas = {
-    'Norte': ['Chamartín','Tetuán','Fuencarral-El Pardo','Hortaleza','Barajas'],
-    'Centro': ['Centro','Argenzuela','Retiro','Salamanca','Chamberí','Moncloa-Aravaca','Ciudad Lineal','Latina','San Blas-Canillejas'],
-    'Sur': ['Carabanchel','Usera','Puente de Vallecas','Moratalaz','Villaverde','Villa de Vallecas','Vicálvaro']
-}
+# st.set_page_config(page_title="Predicción de Precios", page_icon=":house:",layout="wide",
+#      initial_sidebar_state="expanded")
+
+
+# c1, c2 = st.columns([.85, .20])
+# c1.title('PREDICTOR DE PRECIOS DE VIVIENDAS :crystal_ball:')
+# c1.subheader('¿Cuánto pagarás por tu nuevo hogar? :european_castle:')
+# c2.image('../Data/logo (2).png', width=200)
+
+# Zonas = {
+#     'Norte': ['Chamartín','Tetuán','Fuencarral-El Pardo','Hortaleza','Barajas'],
+#     'Centro': ['Centro','Argenzuela','Retiro','Salamanca','Chamberí','Moncloa-Aravaca','Ciudad Lineal','Latina','San Blas-Canillejas'],
+#     'Sur': ['Carabanchel','Usera','Puente de Vallecas','Moratalaz','Villaverde','Villa de Vallecas','Vicálvaro']
+# }
 
 # Diccionario de códigos postales
 codigos_postales = {28000: 942338.7096774194,
@@ -124,6 +138,22 @@ distritos = {
 # Función principal de la app
 def main():
     
+    
+    st.set_page_config(page_title="Predicción de Precios", page_icon=":house:",layout="wide",
+        initial_sidebar_state="expanded")
+
+
+    c1, c2 = st.columns([.85, .20])
+    c1.title('PREDICTOR DE PRECIOS DE VIVIENDAS :crystal_ball:')
+    c1.subheader('¿Cuánto pagarás por tu nuevo hogar? :european_castle:')
+    c2.image('../Data/logo (2).png', width=200)
+
+    Zonas = {
+        'Norte': ['Chamartín','Tetuán','Fuencarral-El Pardo','Hortaleza','Barajas'],
+        'Centro': ['Centro','Argenzuela','Retiro','Salamanca','Chamberí','Moncloa-Aravaca','Ciudad Lineal','Latina','San Blas-Canillejas'],
+        'Sur': ['Carabanchel','Usera','Puente de Vallecas','Moratalaz','Villaverde','Villa de Vallecas','Vicálvaro']
+    }
+
     # Selector para elegir la Zona
     zona_seleccionada = st.selectbox("Elige la zona de Madrid:", list(Zonas.keys()))
     if zona_seleccionada == "Norte":
