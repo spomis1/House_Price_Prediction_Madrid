@@ -5,13 +5,25 @@
 
 <h2> 📝 Introducción</h2>
 
-Este proyecto se abordará la aplicación del machine learning para predecir los precios de venta de las viviendas en madrid, brindando una descripción detallada del trabajo realizado. Identificaremos tendencias, correlaciones y patrones que ofrezcan una visión clara sobre la dinámica de precios en el sector inmobiliario madrileño. <br> 
-Estos descubrimientos pueden ser de gran utilidad para las agencias inmobiliarias, que pueden afinar sus estrategias de valoración y marketing, y para los compradores, que obtendrán una visión más informada sobre el valor real de una propiedad.
+
+En este proyecto, nos enfocamos en la aplicación de machine learning para predecir los precios de venta de viviendas en Madrid, proporcionando una descripción detallada del trabajo realizado. Identificamos tendencias, correlaciones y patrones que ofrecen una visión clara de la dinámica de precios en el sector inmobiliario madrileño.
+
+Estos hallazgos pueden resultar de gran utilidad tanto para las agencias inmobiliarias, que pueden ajustar sus estrategias de valoración y marketing, como para los compradores, quienes obtendrán una visión más informada sobre el valor real de una propiedad.
+
+//
+
+In this project, we focus on the application of machine learning to predict home sale prices in Madrid, providing a detailed description of the work performed. We identify trends, correlations and patterns that provide a clear picture of the price dynamics in the Madrid real estate sector.
+
+These insights can be of great use both to real estate agencies, who can adjust their valuation and marketing strategies, and to buyers, who will gain a more informed view of the real value of a property.
 
 
 <h2>👾Aplicación</h2>
 
 Haz clic en el icono de Streamlit para ejecutar la aplicación.<br>
+
+//
+
+Click on the Streamlit icon to run the application.
 
 
 <a href="https://house-price-predictor-spomi.streamlit.app/">
