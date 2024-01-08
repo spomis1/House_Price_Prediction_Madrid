@@ -16,16 +16,24 @@ import joblib
 
 import os
 
+# # Obtener la ruta del directorio actual del script
+# current_directory = os.path.dirname(os.path.abspath(__file__))
+
+# # Construir la ruta al archivo Rf.pkl de manera compatible con todos los sistemas
+# modelo_path = os.path.join(current_directory, 'Rf.pkl')
+
+# # Cargar el modelo
+# with open(modelo_path, 'rb') as file:
+#     modelo = pickle.load(file)
+
 # Obtener la ruta del directorio actual del script
 current_directory = os.path.dirname(os.path.abspath(__file__))
 
-# Construir la ruta al archivo Rf.pkl de manera compatible con todos los sistemas
-modelo_path = os.path.join(current_directory, 'Rf.pkl')
+# Construir la ruta al archivo rR.joblib de manera compatible con todos los sistemas
+modelo_path = os.path.join(current_directory, 'Rf.joblib')
 
-# Cargar el modelo
-with open(modelo_path, 'rb') as file:
-    modelo = pickle.load(file)
-
+# Cargar el modelo con joblib.load
+modelo = joblib.load(modelo_path)
 
 # # Obtén la ruta del directorio actual
 # current_directory = os.path.dirname(os.path.realpath(__file__))
