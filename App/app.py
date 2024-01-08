@@ -25,15 +25,15 @@ import joblib
 
 
 
-# Obtén la ruta del directorio actual del script
-script_directory = os.path.dirname(__file__)
+# # Obtén la ruta del directorio actual del script
+# script_directory = os.path.dirname(__file__)
 
 
-try:
-    modelo = joblib.load(os.path.join(script_directory, '../Models/Rf.joblib'))
-    print(f"Modelo cargado exitosamente. Tipo: {type(modelo)}, Forma: {modelo.shape}")
-except Exception as e:
-    print(f"Error al cargar el modelo: {e}")
+# try:
+#     modelo = joblib.load(os.path.join(script_directory, '../Models/Rf.joblib'))
+#     print(f"Modelo cargado exitosamente. Tipo: {type(modelo)}, Forma: {modelo.shape}")
+# except Exception as e:
+#     print(f"Error al cargar el modelo: {e}")
 
 
 # Obtener la ruta al directorio actual del script
@@ -199,7 +199,15 @@ def main():
             'Terraza': [terraza],
             
         })
+        # Obtén la ruta del directorio actual del script
+        script_directory = os.path.dirname(__file__)
 
+
+        try:
+            modelo = joblib.load(os.path.join(script_directory, '../Models/Rf.joblib'))
+            print(f"Modelo cargado exitosamente. Tipo: {type(modelo)}, Forma: {modelo.shape}")
+        except Exception as e:
+            print(f"Error al cargar el modelo: {e}")
         # Realizar la predicción con el modelo
         precio_predicho = modelo.predict(datos_entrada)[0]
 
