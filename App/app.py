@@ -16,14 +16,18 @@ import joblib
 
 
 
-# Obtén la ruta del directorio actual
-current_directory = os.path.dirname(os.path.realpath(__file__))
+# # Obtén la ruta del directorio actual
+# current_directory = os.path.dirname(os.path.realpath(__file__))
 
-# Construye la ruta completa al modelo
-model_path = os.path.join(current_directory, '../Models/Rf.joblib')
+# # Construye la ruta completa al modelo
+# model_path = os.path.join(current_directory, '../Models/Rf.joblib')
 
-# Carga el modelo
-modelo = joblib.load(model_path)
+# # Carga el modelo
+# modelo = joblib.load(model_path)
+
+# Cargando el modelo ya entrenado
+with open('../Models/Rf.pkl', 'rb') as file:
+    modelo = pickle.load(file)
 
 
 # # Cargar el modelo con joblib
