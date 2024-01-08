@@ -15,9 +15,19 @@ import os
 
 
 
-# # Cargando el modelo ya entrenado
+# Obtener la ruta al directorio actual del script
+dir_path = os.path.dirname(os.path.realpath(__file__))
 
-with open('../Models/Rf.pkl', 'rb') as file:
+# Construir la ruta al modelo
+modelo_path = os.path.join(dir_path, '../Models/Rf.pkl')
+
+# # # Cargando el modelo ya entrenado
+
+# with open('../Models/Rf.pkl', 'rb') as file:
+#     modelo = pickle.load(file, fix_imports=False, encoding='latin1')
+
+# Cargar el modelo
+with open(modelo_path, 'rb') as file:
     modelo = pickle.load(file, fix_imports=False, encoding='latin1')
 
 # # Cargando el modelo ya entrenado
