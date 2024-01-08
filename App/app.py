@@ -14,50 +14,18 @@ from sklearn.preprocessing import OrdinalEncoder
 import os
 import joblib
 
-import os
+# Cargar el modelo con joblib
+modelo = joblib.load('../Models/Rf.joblib')
+# Obtener la ruta al directorio actual del script
+dir_path = os.path.dirname(os.path.realpath(__file__))
 
-# # Obtener la ruta del directorio actual del script
-# current_directory = os.path.dirname(os.path.abspath(__file__))
+# Construir la ruta al modelo
+modelo_path = os.path.join(dir_path, '../Models/Rf.pkl')
 
-# # Construir la ruta al archivo Rf.pkl de manera compatible con todos los sistemas
-# modelo_path = os.path.join(current_directory, 'Rf.pkl')
+# # # Cargando el modelo ya entrenado
 
-# # Cargar el modelo
-# with open(modelo_path, 'rb') as file:
-#     modelo = pickle.load(file)
-
-# Obtener la ruta del directorio actual del script
-current_directory = os.path.dirname(os.path.abspath(__file__))
-
-# Construir la ruta al archivo rR.joblib de manera compatible con todos los sistemas
-modelo_path = os.path.join(current_directory, 'Rf.joblib')
-
-# Cargar el modelo con joblib.load
-modelo = joblib.load(modelo_path)
-
-# # Obtén la ruta del directorio actual
-# current_directory = os.path.dirname(os.path.realpath(__file__))
-
-# # Construye la ruta completa al modelo
-# model_path = os.path.join(current_directory, '../Models/Rf.joblib')
-
-# # Carga el modelo
-# modelo = joblib.load(model_path)
-
-
-
-# # Cargar el modelo con joblib
-# modelo = joblib.load('../Models/Rf.joblib')
-# # Obtener la ruta al directorio actual del script
-# dir_path = os.path.dirname(os.path.realpath(__file__))
-
-# # Construir la ruta al modelo
-# modelo_path = os.path.join(dir_path, '../Models/Rf.pkl')
-
-# # # # Cargando el modelo ya entrenado
-
-# # with open('../Models/Rf.pkl', 'rb') as file:
-# #     modelo = pickle.load(file, fix_imports=False, encoding='latin1')
+# with open('../Models/Rf.pkl', 'rb') as file:
+#     modelo = pickle.load(file, fix_imports=False, encoding='latin1')
 
 # # Cargar el modelo
 # with open(modelo_path, 'rb') as file:
