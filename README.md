@@ -94,3 +94,37 @@ En este proyecto hemos trabajado con las siguientes variables:
 15. **Balcony ->** Si tiene balcón
 16. **Terrace ->** Si tiene terraza
 17. **Swimming_Pool ->** Si tiene piscina
+
+<h2>📚 Librerías Utilizadas</h2>
+<div>
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/31/NumPy_logo_2020.svg" title="Numpy" **alt="Numpy" width="180" height="180"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Pandas_logo.svg" title="Pandas" **alt="Pandas" width="180" height="180"/>
+<img src="https://matplotlib.org/stable/_static/logo_dark.svg" title="matplotlib" **alt="Matplotlib" width="220" height="180"/>
+<img src="https://seaborn.pydata.org/_static/logo-wide-lightbg.svg" title="Seaborn" **alt="Seaborn" width="180" height="180"/>
+<img src="https://www.statsmodels.org/stable/_images/statsmodels-logo-v2-horizontal.svg" title="statsmodels" **alt="statsmodels" width="180" height="180"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/SCIPY_2.svg" title="scipy" **alt="scipy" width="100" height="100"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" title="Scikit_learn" **alt="Scikit_learn" width="180" height="180"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/77/Streamlit-logo-primary-colormark-darktext.png" title="Streamlit" **alt="Streamlit" width="180" height="180"/>
+<img src="https://joblib.readthedocs.io/en/stable/_static/joblib_logo.svg" title="Joblib" **alt="Joblib" width="180" height="180"/>
+<img src="https://geopy.readthedocs.io/en/stable/_images/logo-wide.png" title="Geopy" **alt="Geopy" width="180" height="180"/>
+
+</div>
+
+
+
+<h2> 📥 Fuentes</h2> 
+<a href="https://www.idealista.com/"> <img src="https://st3.idealista.com/static/common/img/idealista.svg" title="idealista" **alt="idealista" width="180" height="180"/> </a>
+<a href="https://www.kaggle.com/datasets"> <img src="https://www.kaggle.com/static/images/site-logo.svg" title="Kaggle" **alt="Kaggle" width="180" height="180"/> </a>
+
+<br></br>
+<p>Espero que este proyecto haya sido de tu interés.<br>
+No dudes en consultarme cualquier duda que te haya surgido y siéntete libre de compartirlo! Estoy abierto a recibir tus comentarios y sugerencias.
+
+//
+
+I hope this project has been of interest to you. Feel free to ask me any questions that may have arisen, and feel free to share it! I am open to receiving your comments and suggestions.
+
+</p></br>
+
+<h2>👨‍💻 Autor</h2>
+<a href="https://www.linkedin.com/in/sebastianpomi/" target="_blank">Sebastian Pomi</a>
