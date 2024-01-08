@@ -22,13 +22,18 @@ import joblib
 # # Construir la ruta al modelo
 # modelo_path = os.path.join(dir_path, '../Models/Rf.joblib')
 
-import os
+
+
 
 # Obtén la ruta del directorio actual del script
 script_directory = os.path.dirname(__file__)
 
-# Construye la ruta completa al archivo
-modelo = joblib.load(os.path.join(script_directory, '../Models/Rf.joblib'))
+
+try:
+    modelo = joblib.load(os.path.join(script_directory, '../Models/Rf.joblib'))
+except Exception as e:
+    print(f"Error al cargar el modelo: {e}")
+
 
 
 
