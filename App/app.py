@@ -14,13 +14,22 @@ from sklearn.preprocessing import OrdinalEncoder
 import os
 import joblib
 
-# Cargar el modelo con joblib
-modelo = joblib.load('../Models/Rf.joblib')
-# Obtener la ruta al directorio actual del script
-dir_path = os.path.dirname(os.path.realpath(__file__))
+# # Cargar el modelo con joblib
+# modelo = joblib.load('../Models/Rf.joblib')
+# # Obtener la ruta al directorio actual del script
+# dir_path = os.path.dirname(os.path.realpath(__file__))
 
-# Construir la ruta al modelo
-modelo_path = os.path.join(dir_path, '../Models/Rf.joblib')
+# # Construir la ruta al modelo
+# modelo_path = os.path.join(dir_path, '../Models/Rf.joblib')
+
+import os
+
+# Obtén la ruta del directorio actual del script
+script_directory = os.path.dirname(__file__)
+
+# Construye la ruta completa al archivo
+modelo = joblib.load(os.path.join(script_directory, '../Models/Rf.joblib'))
+
 
 
 # Diccionario de códigos postales
