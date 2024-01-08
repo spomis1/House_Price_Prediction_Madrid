@@ -28,7 +28,7 @@ modelo_path = os.path.join(dir_path, '../Models/Rf.pkl')
 
 # Cargar el modelo
 with open(modelo_path, 'rb') as file:
-    modelo = pickle.load(file, fix_imports=False, encoding='latin1')
+    modelo = pickle.load(file, fix_imports=False, encoding='latin1',protocol=2)
 
 # # Cargando el modelo ya entrenado
 # try:
