@@ -14,7 +14,9 @@ from sklearn.preprocessing import OrdinalEncoder
 import os
 import joblib
 
-
+# Cargando el modelo ya entrenado
+with open('C:/Users/sebas/Documents/cv/Portfolio/House_Price_Prediction_Madrid/App/Rf.pkl', 'rb') as file:
+    modelo = pickle.load(file)
 
 # # Obtén la ruta del directorio actual
 # current_directory = os.path.dirname(os.path.realpath(__file__))
@@ -25,9 +27,6 @@ import joblib
 # # Carga el modelo
 # modelo = joblib.load(model_path)
 
-# Cargando el modelo ya entrenado
-with open('./Rf.pkl', 'rb') as file:
-    modelo = pickle.load(file)
 
 
 # # Cargar el modelo con joblib
