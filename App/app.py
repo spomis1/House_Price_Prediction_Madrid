@@ -20,7 +20,7 @@ modelo = joblib.load('../Models/Rf.joblib')
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
 # Construir la ruta al modelo
-modelo_path = os.path.join(dir_path, '../Models/Rf.pkl')
+modelo_path = os.path.join(dir_path, '../Models/Rf.joblib')
 
 
 # Diccionario de códigos postales
