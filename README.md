@@ -3,13 +3,13 @@
 ![portada](Data/portada.jpg)
 
 
-<h2 id="Introducción"> 📝 Introducción</h2>
+<h2> 📝 Introducción</h2>
 
 Este proyecto se abordará la aplicación del machine learning para predecir los precios de venta de las viviendas en madrid, brindando una descripción detallada del trabajo realizado. Identificaremos tendencias, correlaciones y patrones que ofrezcan una visión clara sobre la dinámica de precios en el sector inmobiliario madrileño. <br> 
 Estos descubrimientos pueden ser de gran utilidad para las agencias inmobiliarias, que pueden afinar sus estrategias de valoración y marketing, y para los compradores, que obtendrán una visión más informada sobre el valor real de una propiedad.
 
 
-<h2>Dashborard</h2>
+<h2>👾Aplicación</h2>
 
 Haz clic en el icono de Streamlit para ejecutar la aplicación.<br>
 
@@ -19,7 +19,7 @@ Haz clic en el icono de Streamlit para ejecutar la aplicación.<br>
 </a>
 
 
-<h2 id="Estructura-repositorio."> 💾 Estructura Repositorio</h2>
+<h2> 💾 Estructura Repositorio</h2>
 
 En la estructura de carpetas, se han incluido las siguientes secciones:
 
@@ -35,7 +35,7 @@ En la estructura de carpetas, se han incluido las siguientes secciones:
 
 - "README.md": Este es el archivo principal que proporciona información general sobre el proyecto, incluyendo la descripción de la estructura de carpetas y otras instrucciones o notas relevantes.
 
-<h2 id="folder-structure"> 📁 Estructura Carpetas </h2>
+<h2> 📁 Estructura Carpetas </h2>
 
     HOUSE_PRICE_PREDICTION_MADRID
     ├── App
@@ -72,7 +72,7 @@ En la estructura de carpetas, se han incluido las siguientes secciones:
     └── README.md
 
 
-<h2 id="Variables"> 🏷️ Variables</h2>
+<h2> 🏷️ Variables</h2>
 
 En este proyecto hemos trabajado con las siguientes variables:
 
