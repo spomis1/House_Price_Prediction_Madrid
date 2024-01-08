@@ -2,13 +2,6 @@
 
 ![portada](Data/portada.jpg)
 
-<p align="center">
-  <a href="#Introducción">Introducción</a> •
-  <a href="#Estructura-repositorio.">Estructura repositorio.</a> •
-  <a href="#Variables.">Variables.</a> •
-</p>  
-
-
 
 <h2 id="Introducción"> 📝 Introducción</h2>
 
@@ -39,21 +32,21 @@ En la estructura de carpetas, se han incluido las siguientes secciones:
     │   ├── app.py
     │   └── requirements.txt
     │
-    ├── data
+    ├── Data
     │   ├── Processed
     │   │   ├── __init_py__.py
     │   │   └── madrid.csv
     │   ├── Raw
     │   │   ├── __init_py__.py
     │   │   └── buy_houses_Madrid.csv
-    │   ├── logo(2).png
+    │   ├── logo.png
     │   └─── portada.jpg
     │  
     ├── Docs 
     │   └── Memoria.pdf
     ├── Models
     │   ├── __init__.py
-    │   └── Rf.pkl
+    │   └── Rf.joblib
     │
     ├── Notebooks
     │   ├── 01_EDA_&_Preprocesamiento.ipynb
