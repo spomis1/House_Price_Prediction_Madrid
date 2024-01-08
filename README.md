@@ -9,7 +9,17 @@ Este proyecto se abordará la aplicación del machine learning para predecir los
 Estos descubrimientos pueden ser de gran utilidad para las agencias inmobiliarias, que pueden afinar sus estrategias de valoración y marketing, y para los compradores, que obtendrán una visión más informada sobre el valor real de una propiedad.
 
 
-<h2 id="Estructura-repositorio."> :floppy_disk: Estructura repositorio.</h2>
+<h2>Dashborard</h2>
+
+Haz clic en el icono de Streamlit para ejecutar la aplicación.<br>
+
+
+<a href="https://house-price-predictor-spomi.streamlit.app/">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/7/77/Streamlit-logo-primary-colormark-darktext.png" title="Streamlit" alt="Streamlit" width="100" height="100"/>
+</a>
+
+
+<h2 id="Estructura-repositorio."> 💾 Estructura Repositorio</h2>
 
 En la estructura de carpetas, se han incluido las siguientes secciones:
 
@@ -25,7 +35,7 @@ En la estructura de carpetas, se han incluido las siguientes secciones:
 
 - "README.md": Este es el archivo principal que proporciona información general sobre el proyecto, incluyendo la descripción de la estructura de carpetas y otras instrucciones o notas relevantes.
 
-<h2 id="folder-structure"> Estructura de las carpetas</h2>
+<h2 id="folder-structure"> 📁 Estructura Carpetas </h2>
 
     HOUSE_PRICE_PREDICTION_MADRID
     ├── App
@@ -62,7 +72,7 @@ En la estructura de carpetas, se han incluido las siguientes secciones:
     └── README.md
 
 
-<h2 id="Variables."> :book: Variables.</h2>
+<h2 id="Variables"> 🏷️ Variables</h2>
 
 En este proyecto hemos trabajado con las siguientes variables:
 
