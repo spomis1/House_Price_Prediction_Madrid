@@ -35,6 +35,13 @@ except Exception as e:
     print(f"Error al cargar el modelo: {e}")
 
 
+# Obtener la ruta al directorio actual del script
+script_directory = os.path.dirname(os.path.abspath(__file__))
+
+# Construir la ruta a la imagen
+ruta_logo = os.path.join(script_directory, '..', 'Data', 'logo.png')
+# Mostrar la imagen en la aplicación
+# st.image(ruta_logo, width=200, format='PNG')
 
 
 # Diccionario de códigos postales
@@ -135,7 +142,8 @@ def main():
     c1, c2 = st.columns([.85, .20])
     c1.title('PREDICTOR DE PRECIOS DE VIVIENDAS :crystal_ball:')
     c1.subheader('¿Cuánto pagarás por tu nuevo hogar? :european_castle:')
-    c2.image('../Data/logo.png', width=200, format='PNG')
+    c2.image(ruta_logo, width=200)
+    
 
     Zonas = {
         'Norte': ['Chamartín','Tetuán','Fuencarral-El Pardo','Hortaleza','Barajas'],
