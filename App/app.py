@@ -121,6 +121,7 @@ distritos = {
 # Función principal de la app
 def main():
 
+    global modelo
 
     st.set_page_config(page_title="Predicción de Precios", page_icon=":house:",layout="wide",
         initial_sidebar_state="expanded")
