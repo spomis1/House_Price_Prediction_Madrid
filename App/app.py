@@ -122,11 +122,6 @@ distritos = {
 # Función principal de la app
 def main():
 
-    try:
-        modelo = joblib.load(os.path.join(script_directory, '../Models/Rf.joblib'))
-    except Exception as e:
-        st.error(f"Error al cargar el modelo: {e}")
-        st.stop()
 
     st.set_page_config(page_title="Predicción de Precios", page_icon=":house:",layout="wide",
         initial_sidebar_state="expanded")
