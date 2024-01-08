@@ -135,7 +135,7 @@ def main():
     c1, c2 = st.columns([.85, .20])
     c1.title('PREDICTOR DE PRECIOS DE VIVIENDAS :crystal_ball:')
     c1.subheader('¿Cuánto pagarás por tu nuevo hogar? :european_castle:')
-    c2.image('../Data/logo (2).png', width=200)
+    c2.image('../Data/logo.png', width=200, format='PNG')
 
     Zonas = {
         'Norte': ['Chamartín','Tetuán','Fuencarral-El Pardo','Hortaleza','Barajas'],
