@@ -36,12 +36,11 @@ except Exception as e:
 
 
 # Obtener la ruta al directorio actual del script
-script_directory = os.path.dirname(os.path.abspath(__file__))
+script_directory_logo = os.path.dirname(os.path.abspath(__file__))
 
 # Construir la ruta a la imagen
-ruta_logo = os.path.join(script_directory, '..', 'Data', 'logo.png')
-# Mostrar la imagen en la aplicación
-# st.image(ruta_logo, width=200, format='PNG')
+ruta_logo = os.path.join(script_directory_logo, '..', 'Data', 'logo.png')
+
 
 
 # Diccionario de códigos postales
