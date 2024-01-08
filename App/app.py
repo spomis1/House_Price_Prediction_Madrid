@@ -14,26 +14,14 @@ from sklearn.preprocessing import OrdinalEncoder
 import os
 import joblib
 
-# # Cargar el modelo con joblib
-# modelo = joblib.load('../Models/Rf.joblib')
-# # Obtener la ruta al directorio actual del script
-# dir_path = os.path.dirname(os.path.realpath(__file__))
+# Obtén la ruta del directorio actual del script
+script_directory = os.path.dirname(__file__)
 
-# # Construir la ruta al modelo
-# modelo_path = os.path.join(dir_path, '../Models/Rf.joblib')
-
-
-
-
-# # Obtén la ruta del directorio actual del script
-# script_directory = os.path.dirname(__file__)
-
-
-# try:
-#     modelo = joblib.load(os.path.join(script_directory, '../Models/Rf.joblib'))
-#     print(f"Modelo cargado exitosamente. Tipo: {type(modelo)}, Forma: {modelo.shape}")
-# except Exception as e:
-#     print(f"Error al cargar el modelo: {e}")
+try:
+    modelo = joblib.load(os.path.join(script_directory, '../Models/Rf.joblib'))
+    print(f"Modelo cargado exitosamente. Tipo: {type(modelo)}, Forma: {modelo.shape}")
+except Exception as e:
+    print(f"Error al cargar el modelo: {e}")
 
 
 # Obtener la ruta al directorio actual del script
@@ -130,11 +118,10 @@ distritos = {
 
 
 
-
 # Función principal de la app
 def main():
-    
-    
+
+
     st.set_page_config(page_title="Predicción de Precios", page_icon=":house:",layout="wide",
         initial_sidebar_state="expanded")
 
@@ -197,17 +184,8 @@ def main():
             'Calefaccion': [calefaccion],
             'Piscina': [piscina],
             'Terraza': [terraza],
-            
         })
-        # Obtén la ruta del directorio actual del script
-        script_directory = os.path.dirname(__file__)
 
-
-        try:
-            modelo = joblib.load(os.path.join(script_directory, '../Models/Rf.joblib'))
-            print(f"Modelo cargado exitosamente. Tipo: {type(modelo)}, Forma: {modelo.shape}")
-        except Exception as e:
-            print(f"Error al cargar el modelo: {e}")
         # Realizar la predicción con el modelo
         precio_predicho = modelo.predict(datos_entrada)[0]
 
