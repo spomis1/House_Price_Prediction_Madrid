@@ -167,8 +167,15 @@ def main():
     aire_acondicionado = st.checkbox("¿Aire Acondicionado?")
     calefaccion = st.checkbox("¿Calefacción?")
 
+
+
     # Cuando se presione el botón de predicción
     if st.button("Predecir Precio"):
+
+        # Verificar si el modelo se cargó correctamente
+        if modelo is None:
+            st.error("Error: El modelo no se cargó correctamente.")
+            st.stop()
 
         # Crear un DataFrame con los datos ingresados
         datos_entrada = pd.DataFrame({
@@ -185,6 +192,8 @@ def main():
             'Piscina': [piscina],
             'Terraza': [terraza],
         })
+
+    
 
         # Realizar la predicción con el modelo
         precio_predicho = modelo.predict(datos_entrada)[0]
