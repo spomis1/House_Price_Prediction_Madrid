@@ -14,9 +14,18 @@ from sklearn.preprocessing import OrdinalEncoder
 import os
 import joblib
 
-# Cargando el modelo ya entrenado
-with open('C:/Users/sebas/Documents/cv/Portfolio/House_Price_Prediction_Madrid/App/Rf.pkl', 'rb') as file:
+import os
+
+# Obtener la ruta del directorio actual del script
+current_directory = os.path.dirname(os.path.abspath(__file__))
+
+# Construir la ruta al archivo Rf.pkl de manera compatible con todos los sistemas
+modelo_path = os.path.join(current_directory, 'Rf.pkl')
+
+# Cargar el modelo
+with open(modelo_path, 'rb') as file:
     modelo = pickle.load(file)
+
 
 # # Obtén la ruta del directorio actual
 # current_directory = os.path.dirname(os.path.realpath(__file__))
