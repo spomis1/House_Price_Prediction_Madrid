@@ -19,9 +19,9 @@ script_directory = os.path.dirname(__file__)
 
 try:
     modelo = joblib.load(os.path.join(script_directory, '../Models/Rf.joblib'))
-    print(f"Modelo cargado exitosamente. Tipo: {type(modelo)}, Forma: {modelo.shape}")
 except Exception as e:
-    print(f"Error al cargar el modelo: {e}")
+    st.error(f"Error al cargar el modelo: {e}")
+    st.stop()
 
 
 # Obtener la ruta al directorio actual del script
@@ -172,7 +172,6 @@ def main():
     # Cuando se presione el botón de predicción
     if st.button("Predecir Precio"):
 
-        # Verificar si el modelo se cargó correctamente
         if modelo is None:
             st.error("Error: El modelo no se cargó correctamente.")
             st.stop()
