@@ -19,9 +19,17 @@ from sklearn.preprocessing import OrdinalEncoder
 # with open('../Models/Rf.pkl', 'rb') as file:
 #     modelo = pickle.load(file)
 
-
-with open('../Models/Rf.pkl', 'rb') as file:
-    modelo = pickle.load(file, fix_imports=False, encoding='latin1')
+# with open('../Models/Rf.pkl', 'rb') as file:
+#     modelo = pickle.load(file, fix_imports=False, encoding='latin1')
+try:
+    with open('../Models/Rf.pkl', 'rb') as file:
+        modelo = pickle.load(file, fix_imports=False, encoding='latin1')
+except FileNotFoundError:
+    st.error("No se pudo cargar el modelo. Verifica la ruta del archivo.")
+    st.stop()
+except Exception as e:
+    st.error(f"Error al cargar el modelo: {e}")
+    st.stop()
 # # Cargando el modelo ya entrenado
 # try:
 #     with open('../Models/Rf.pkl', 'rb') as file:
