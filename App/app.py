@@ -12,26 +12,29 @@ from sklearn.preprocessing import StandardScaler,MinMaxScaler
 import pickle
 from sklearn.preprocessing import OrdinalEncoder
 import os
+import joblib
 
 
 
-# Obtener la ruta al directorio actual del script
-dir_path = os.path.dirname(os.path.realpath(__file__))
+# Cargar el modelo con joblib
+modelo = joblib.load('../Models/Rf.joblib')
+# # Obtener la ruta al directorio actual del script
+# dir_path = os.path.dirname(os.path.realpath(__file__))
 
-# Construir la ruta al modelo
-modelo_path = os.path.join(dir_path, '../Models/Rf.pkl')
+# # Construir la ruta al modelo
+# modelo_path = os.path.join(dir_path, '../Models/Rf.pkl')
 
-# # # Cargando el modelo ya entrenado
+# # # # Cargando el modelo ya entrenado
 
-# with open('../Models/Rf.pkl', 'rb') as file:
+# # with open('../Models/Rf.pkl', 'rb') as file:
+# #     modelo = pickle.load(file, fix_imports=False, encoding='latin1')
+
+# # Cargar el modelo
+# with open(modelo_path, 'rb') as file:
 #     modelo = pickle.load(file, fix_imports=False, encoding='latin1')
 
-# Cargar el modelo
-with open(modelo_path, 'rb') as file:
-    modelo = pickle.load(file, fix_imports=False, encoding='latin1')
-
-# # Cargando el modelo ya entrenado
-# try:
+# # # Cargando el modelo ya entrenado
+# # try:
 #     with open('../Models/Rf.pkl', 'rb') as file:
 #         modelo = pickle.load(file)
 # except FileNotFoundError:
