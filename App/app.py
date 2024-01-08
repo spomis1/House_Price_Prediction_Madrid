@@ -17,13 +17,6 @@ import joblib
 # Obtén la ruta del directorio actual del script
 script_directory = os.path.dirname(__file__)
 
-try:
-    modelo = joblib.load(os.path.join(script_directory, '../Models/Rf.joblib'))
-except Exception as e:
-    print(f"Error al cargar el modelo: {e}")
-    
-
-
 # Obtener la ruta al directorio actual del script
 script_directory_logo = os.path.dirname(os.path.abspath(__file__))
 
@@ -121,7 +114,11 @@ distritos = {
 # Función principal de la app
 def main():
 
-    global modelo
+    try:
+        modelo = joblib.load(os.path.join(script_directory, '../Models/Rf.joblib'))
+    except Exception as e:
+        st.error(f"Error al cargar el modelo: {e}")
+        st.stop()
 
     st.set_page_config(page_title="Predicción de Precios", page_icon=":house:",layout="wide",
         initial_sidebar_state="expanded")
