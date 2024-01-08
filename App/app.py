@@ -26,7 +26,7 @@ import joblib
 # modelo = joblib.load(model_path)
 
 # Cargando el modelo ya entrenado
-with open('Rf.pkl', 'rb') as file:
+with open('/Rf.pkl', 'rb') as file:
     modelo = pickle.load(file)
 
 
