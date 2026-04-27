@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Entornos virtuales
+.env
+.venv
+venv/
+env/
+
+# Modelos serializados alternativos (no el joblib oficial)
+*.pkl
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Claude Code
+.claude/

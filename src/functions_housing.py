@@ -1,57 +1,37 @@
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-from scipy.stats import normaltest
-from scipy.stats import anderson
-import statsmodels.api as sm
-import streamlit as st
-from sklearn.model_selection import GridSearchCV
-from sklearn.linear_model import LinearRegression
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
-from sklearn.linear_model import LinearRegression, Ridge, Lasso
-from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
-from sklearn.preprocessing import StandardScaler,MinMaxScaler
-import xgboost as xgb
-from sklearn.model_selection import cross_val_score
-import pickle
-import shap
-import xgboost as xgb
-from xgboost import XGBRegressor
-from sklearn.preprocessing import OrdinalEncoder
-from sklearn.pipeline import Pipeline
+from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error
 from geopy.geocoders import Nominatim
-from geopy.exc import GeocoderInsufficientPrivileges
 from geopy.exc import GeocoderTimedOut, GeocoderServiceError
 
-# Crear un geocodificador Nominatim
+
+# Geocodificador para completar códigos postales nulos o inválidos
 geolocator = Nominatim(user_agent="Madrid_Housing_Predict_Price")
-# Funcion para completar los Zipcode nulos o los que no comienzan con 28
-def obtener_codigo_postal(madrid):
+
+def obtener_codigo_postal(row):
+    """Completa el código postal usando coordenadas cuando es nulo o no empieza por 28."""
     try:
-        if pd.isna(madrid['Zipcode']) or not str(madrid['Zipcode']).startswith("28"):
-            location = geolocator.reverse((madrid['Latitude'], madrid['Longitude']), exactly_one=True)
+        if pd.isna(row['Zipcode']) or not str(row['Zipcode']).startswith("28"):
+            location = geolocator.reverse((row['Latitude'], row['Longitude']), exactly_one=True)
             if location:
                 zipcode = location.raw.get('address', {}).get('postcode', None)
                 if zipcode:
                     return zipcode
     except (GeocoderTimedOut, GeocoderServiceError) as e:
-        print(f"Error: {e}")
-        # Puedes agregar lógica aquí para manejar el error, como esperar un tiempo y volver a intentar
-    return madrid['Zipcode']
+        print(f"Error geocodificando: {e}")
+    return row['Zipcode']
 
-# Guardar CSV
 
 def csv(nombre_archivo, archivo_guardar):
-
-    ruta_archivo = '../Data/Processed' + nombre_archivo + '.csv'
+    """Guarda un DataFrame como CSV en la carpeta Data/Processed."""
+    ruta_archivo = '../Data/Processed/' + nombre_archivo + '.csv'
     archivo_guardar.to_csv(ruta_archivo, index=False)
 
-# Funcion de Valoración de los modelos
-def valoracion_modelos(tipo, modelo, Xtest, ytest):
-    y_pred = modelo.predict(Xtest)
-    print("R2_score",tipo, r2_score(ytest , y_pred))
-    print("MAE", tipo, mean_absolute_error(ytest, y_pred))
-    print("MSE",tipo, mean_squared_error(ytest, y_pred))
-    print("MAPE",tipo,np.mean(np.abs((ytest-y_pred)/ytest)) * 100)
+
+def valoracion_modelos(tipo, modelo, X_test, y_test):
+    """Imprime las métricas de evaluación de un modelo."""
+    y_pred = modelo.predict(X_test)
+    print(f"R²:   {tipo} → {r2_score(y_test, y_pred):.4f}")
+    print(f"MAE:  {tipo} → {mean_absolute_error(y_test, y_pred):,.0f}")
+    print(f"MSE:  {tipo} → {mean_squared_error(y_test, y_pred):,.0f}")
+    print(f"MAPE: {tipo} → {np.mean(np.abs((y_test - y_pred) / y_test)) * 100:.2f}%")
